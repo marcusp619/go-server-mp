@@ -36,7 +36,7 @@ func main() {
 	fileServer := http.FileServer(http.Dir("./static"))
 	http.Handle("/", fileServer)
 	http.HandleFunc("/form", formHandler)
-	http.HandleFunc("/form", helloHandler)
+	http.HandleFunc("/hello", helloHandler)
 
 	fmt.Println("Starting server at port 8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
